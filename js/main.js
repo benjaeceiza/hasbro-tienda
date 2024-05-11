@@ -1,5 +1,6 @@
 let arrayDeProductos;
 
+
 if (localStorage.getItem("arrayDeProductos")){
     arrayDeProductos = JSON.parse(localStorage.getItem("arrayDeProductos"));
     mostrar(arrayDeProductos);
@@ -212,6 +213,12 @@ $inputImagen.className = "input-formulario";
 const $botonEnviar = document.createElement("button");
 $botonEnviar.innerText = "Enviar";
 $botonEnviar.className = "boton-administrador"
+
+$conteinerFormulario.appendChild($inputNombre);
+$conteinerFormulario.appendChild($inputPrecio);
+$conteinerFormulario.appendChild($inputStock);
+$conteinerFormulario.appendChild($inputImagen);
+$conteinerFormulario.appendChild($botonEnviar);
 
 $botonAgregar.onclick = () => mostrarFormulario(1)
 $botonEliminar.onclick = () => mostrarFormulario(2)

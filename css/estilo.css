@@ -9,12 +9,19 @@
 
 
 .nav{
-    background-color: rgb(21, 172, 241);
+    background:linear-gradient(180deg,rgb(31, 103, 185),rgb(3, 101, 146));
 }
 
 .navbar-collapse{
     flex-grow: 0;
+   
 }
+
+.navbar-toggler{
+    border: white solid 1px;
+} 
+
+
 
 .banner-slider{
     height: 30vw;
@@ -55,18 +62,17 @@ background-color: rgba(9, 119, 170, 0.822);
 .section-juguete {
     background: linear-gradient(90deg, black, rgb(99, 98, 98));
     display: flex;
-     padding: 20px;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
     margin: 15px 0;
     min-height: 400px;
-   
+    
+   justify-content: space-around;
     
 }
 
 .section-juguete__img {
-    height: 30vw;
+    width: 50%;
     min-height: 250px;
 }
 
@@ -78,8 +84,6 @@ background-color: rgba(9, 119, 170, 0.822);
 .section-juguete__lista {
     list-style: none;
     text-align: center;
-    justify-content: space-evenly;
- 
 }
 
 .lista-transformer li {
@@ -123,7 +127,7 @@ background-color: rgba(9, 119, 170, 0.822);
 }
 
 .nerf {
-  background: linear-gradient(90deg,rgb(31, 31, 85),rgb(51, 51, 197));
+  background: linear-gradient(90deg,rgb(31, 31, 85),rgb(14, 14, 82));
 }
 
 .baby{
@@ -253,12 +257,70 @@ background-color: rgba(9, 119, 170, 0.822);
 
 .footer{
     background-color: rgb(70, 149, 201);;
+    padding-top: 20px; 
+   
+    
 }
 
-.footer img{
+.footer__img{
     height: 20vw;
     
 }
+
+.div__logo{
+    text-align: center;
+}
+
+.contenedor-listas{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer__list{
+    list-style: none;
+}
+
+.redes{
+    display: flex;
+}
+
+.redes li{
+    margin: 0px 10px;
+}
+
+.footer__link{
+    text-decoration: none;
+    color: white;
+}
+
+.ubicacion{
+    background:linear-gradient(180deg,rgb(3, 101, 146),rgb(31, 103, 185));
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding-top: 30px;
+flex-wrap: wrap;
+}
+
+.ubicacion__div{
+    display: flex;
+
+}
+
+.ubicacion__p{
+    color: white;
+}
+
+.ubicacion__derechos{
+    color: white;
+}
+
+.ubicacion__img{
+    height: 30px;
+}
+
+
 
 
 
@@ -266,10 +328,32 @@ background-color: rgba(9, 119, 170, 0.822);
     .section-juguete{
         flex-direction: column-reverse;
         align-items: center;
+       
     }
 
     .section-juguete__lista {
+        justify-content: center;
         margin: 40px auto;
+        
+    }
+
+    .section-juguete__img{
+        width: 100%;
+    }
+
+    .section-juguete__img__monopoly{
+        width: 85%;
+    }
+
+   
+
+    .contenedor-listas{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__list{
+        text-align: center;
     }
 
     

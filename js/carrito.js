@@ -11,10 +11,11 @@ class Carrito {
 }
 
 
-
+let total = JSON.parse(localStorage.getItem("total"))||0;
 let arrayCarrito;
 
-let total = JSON.parse(localStorage.getItem("total"))||0;
+
+
 
 if(JSON.parse(localStorage.getItem("arrayCarrito"))){
     arrayCarrito = JSON.parse(localStorage.getItem("arrayCarrito"))
@@ -35,7 +36,8 @@ if(JSON.parse(localStorage.getItem("arrayCarrito"))){
 
 
 function cargarCarrito(nombre,precio,cantidad,imagen) {
-
+     
+    alert("Producto agregado al Carrito")
     const carritoNuevo = new Carrito (nombre,precio,cantidad,imagen);
     arrayCarrito.unshift(carritoNuevo);
      
@@ -47,7 +49,22 @@ function cargarCarrito(nombre,precio,cantidad,imagen) {
 }
 
 
-console.log(total);
+function pagar(){
+    alert("Gracias por su compra, vuelva prontos!")
+
+    const $conteinerCompras = document.getElementById("conteiner-compras");
+    $conteinerCompras.innerText = "";
+    
+    const $carritoVacio = document.createElement("h2");
+    $carritoVacio.innerText = "Carrito Vacío"
+    $carritoVacio.className = "carrito-vacio"
+    $conteinerCompras.appendChild($carritoVacio);
+    const $pago = document.getElementById("pago");
+    $pago.innerText="";
+    
+
+    localStorage.removeItem("arrayCarrito",arrayCarrito);
+}
 
 
 
@@ -94,6 +111,8 @@ function mostrarCarrito(arrayCarrito){
          const $botonPagar = document.createElement("button");
          $botonPagar.className = "boton-pagar";
          $botonPagar.innerText ="Pagar"
+
+         $botonPagar.onclick = () => pagar()
          
          $cardCarrito.appendChild($imagenCardCarrito);
          $cardCarrito.appendChild($cantidadProductoCarrito);

@@ -311,7 +311,7 @@ text-align: center;
     border: solid white 1px;
     height: 500px;
     overflow: auto;
-    margin-bottom: 0;
+    margin-bottom: 50px;
 
 }
 
@@ -322,7 +322,7 @@ text-align: center;
 .carrito-vacio {
     color: white;
     text-align: center;
-    margin-top: 35%;
+    margin-top: 20%;
 }
 
 .card-total {

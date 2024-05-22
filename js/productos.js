@@ -176,8 +176,9 @@ function mostrar(arrayDeProductos) {
         conteinerPrecioStock.appendChild($botonCarrito)
         card.appendChild(conteinerPrecioStock);
         conteiner.appendChild(card);
-        $botonCarrito.onclick = () => cargarCarrito(el.nombre, el.precio, stock.value, el.imagen);
 
+        $botonCarrito.onclick = () => cargarCarrito(el.nombre, el.precio, stock.value, el.imagen);
+        
 
     })
 }

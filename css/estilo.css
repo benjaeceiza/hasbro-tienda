@@ -47,12 +47,11 @@
 
 }
 
-.lupa {
-    height: 20px;
-    padding: 0;
+
+
+.form-control{
+text-align: center;
 }
-
-
 
 
 
@@ -163,9 +162,6 @@
 
 }
 
-.productoss {
-    display: none;
-}
 
 .productos__card {
     display: flex;
@@ -504,13 +500,36 @@
 
 
     .compras{
-        width: 100%;
+        width: 95%;
         min-width: 0px;
     }
     
     .pagar{
         
-    width: 100%;
+    width: 95%;
     min-width: 0;
     }
+
+    .productos__card{
+
+        width: 80%;
+        min-width: 0;
+        max-width: 100%;
+        
+       
+    }
+
+    .boton-administrador{
+        width: 100px;
+    }
+
+    .conteiner-formulario {
+      min-width: 0;
+      width: 95%;
+    
+    
+    }
+    
+
+
 }

@@ -184,7 +184,7 @@ text-align: center;
     padding: 10px;
     width: 100%;
     text-align: center;
-    border-radius: 10px 10px 0 0;
+   
 
 }
 
@@ -198,7 +198,7 @@ text-align: center;
     background-color: rgb(11, 83, 165);
     width: 100%;
     padding: 10px;
-    border-radius: 0 0 10px 10px;
+
     align-items: center;
 }
 
@@ -301,6 +301,19 @@ text-align: center;
     color: white;
 }
 
+.carrito-vacio {
+    color: white;
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+.contenedor-card{
+    display: flex;
+    align-items: center;
+
+}
+
 .compras {
     width: 70%;
     min-width: 500px;
@@ -317,13 +330,10 @@ text-align: center;
 
 .compras p {
     color: white;
+    font-size: x-large;
+    
 }
 
-.carrito-vacio {
-    color: white;
-    text-align: center;
-    margin-top: 20%;
-}
 
 .card-total {
     display: flex;
@@ -338,10 +348,30 @@ text-align: center;
     margin: 15px auto;
 }
 
+.img-nombre{
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img-nombre p{
+ 
+    margin-top: 10px;
+    font-size: larger;
+}
+
 
 
 .img-carrito {
     height: 100px;
+}
+
+.tachito{
+    margin-right: 80px;
+}
+
+.tachito:hover{
+    transform: scale(1.1);
 }
 
 .pagar {
@@ -401,7 +431,8 @@ text-align: center;
 }
 
 .footer__img {
-    height: 20vw;
+    height: 15vw;
+    margin-bottom: 40px;
 
 }
 
@@ -528,6 +559,17 @@ text-align: center;
       width: 95%;
     
     
+    }
+
+
+    .tachito{
+       
+        margin-right: 10px;
+        height: 30px;
+    }
+
+    .contenedor-listas{
+        justify-content: space-around;
     }
     
 

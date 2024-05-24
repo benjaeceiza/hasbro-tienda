@@ -75,28 +75,60 @@ if (localStorage.getItem("arrayDeProductos")) {
 
 function control(nombre, precio, stock, imagen) {
     if (nombre == "") {
-        alert("Ingrese un nombre")
+        Toastify({
+
+            text: "Ingrese un nombre",
+            position: "center",
+            duration: 3000,
+            style: {
+                background: "linear-gradient(to right, rgb(241, 82, 82), rgb(241, 82, 82))",
+              },
+            
+            }).showToast();
     } else if (imagen == "") {
-        alert("Ingrese una imagen")
+        Toastify({
+
+            text: "Ingrese una dirección de imagen",
+            position: "center",
+            duration: 3000,
+            style: {
+                background: "linear-gradient(to right, rgb(241, 82, 82), rgb(241, 82, 82))",
+              },
+            
+            }).showToast();
     } else if (precio <= 0 && stock <= 0) {
-        alert("ingrese un numero positivo");
+        Toastify({
+
+            text: "Ingrese números positivos",
+            position: "center",
+            duration: 3000,
+            style: {
+                background: "linear-gradient(to right, rgb(241, 82, 82), rgb(241, 82, 82))",
+              },
+            
+            }).showToast();
         $inputPrecio.value = "";
         $inputStock.value = "";
     } else if (precio <= 0 || stock <= 0) {
-        alert("inrese un numero positivo");
-        $inputPrecio.value = "";
-        $inputStock.value = "";
-    } else if (isNaN(precio) && isNaN(stock)) {
-        alert("Ingrese precio y stock con números");
-        $inputPrecio.value = "";
-        $inputStock.value = "";
-    } else if (isNaN(precio) || isNaN(stock)) {
-        alert("Ingrese precio y stock con números");
-        $inputPrecio.value = "";
-        $inputStock.value = "";
-    } else {
+        Toastify({
 
-        alert("Producto cargado con exito!");
+            text: "Ingrese números positivos",
+            position: "center",
+            duration: 3000,
+            style: {
+                background: "linear-gradient(to right, rgb(241, 82, 82), rgb(241, 82, 82))",
+              },
+            
+            }).showToast();
+        $inputPrecio.value = "";
+        $inputStock.value = "";
+    }  else {
+
+        Swal.fire({
+            title: "Cargado con éxito!",
+            text: "Se ha cargado el producto!",
+            icon: "success"
+          });
      
         
         cargar($inputNombre.value, $inputPrecio.value, $inputStock.value, $inputImagen.value);        
@@ -119,19 +151,56 @@ function cargar(nombre, precio, stock, imagen) {
 function buscarPorNombre(nombre) {
 
     if (nombre === "") {
-        alert("Ingrese un nombre");
+        Toastify({
+
+            text: "Ingrese un nombre",
+            position: "center",
+            duration: 3000,
+            style: {
+                background: "linear-gradient(to right, rgb(241, 82, 82), rgb(241, 82, 82))",
+              },
+            
+            }).showToast();
 
     } else {
         const nuevoArrayDeProductos = arrayDeProductos.filter(el => el.nombre === nombre);
         if (nuevoArrayDeProductos == "") {
-            alert("Ese producto no existe, ingrese nuevamente");
+            Toastify({
+
+                text: "Ese producto no existe, intente nuevamente",
+                position: "center",
+                duration: 3000,
+                style: {
+                    background: "linear-gradient(to right, rgb(241, 82, 82), rgb(241, 82, 82))",
+                  },
+                
+                }).showToast();
+    
             $inputNombre.value = "";
         } else {
-            const nuevoArrayDeProductos = arrayDeProductos.filter(el => el.nombre !== nombre);
-            arrayDeProductos = nuevoArrayDeProductos;
-            localStorage.setItem("arrayDeProductos", JSON.stringify(arrayDeProductos));
-            alert("Producto Eliminado con éxito!")
-            $inputNombre.value = "";
+            Swal.fire({
+                title: "Está seguro?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Eliminar",
+                cancelButtonText: "Cancelar"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    const nuevoArrayDeProductos = arrayDeProductos.filter(el => el.nombre !== nombre);
+                    arrayDeProductos = nuevoArrayDeProductos;
+                    localStorage.setItem("arrayDeProductos", JSON.stringify(arrayDeProductos));
+                    
+                    $inputNombre.value = "";
+
+                  Swal.fire({
+                    title: "Producto eliminado!",
+                    icon: "success"
+                  });
+                }
+              });
+
         }
 
     }

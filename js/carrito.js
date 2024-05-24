@@ -38,33 +38,49 @@ if(JSON.parse(localStorage.getItem("arrayCarrito"))){
 }
 
 function eliminarProductoCarrito(id){
-
-    
-    const nuevoArrayCarrito = arrayCarrito.filter(el => el.id !== id);
-    arrayCarrito = nuevoArrayCarrito;
-    localStorage.setItem("arrayCarrito", JSON.stringify(arrayCarrito));
-    alert("Producto Eliminado con éxito!")
-   
-
-    if(arrayCarrito == ""){
-       localStorage.removeItem("arrayCarrito");
-       const $conteinerCompras = document.getElementById("conteiner-compras");
-    $conteinerCompras.innerText = "";
-     
-    const $carritoVacio = document.createElement("h2");
-    $carritoVacio.innerText = "Carrito Vacío"
-    $carritoVacio.className = "carrito-vacio"
-    $conteinerCompras.appendChild($carritoVacio);
-    const $pago = document.getElementById("pago");
-    $pago.innerText="";
-     
-    contadorCarrito = 0;
-    localStorage.setItem("contadorCarrito",contadorCarrito);
-    }else{
+    Swal.fire({
+        title: "Está seguro?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "Cancelar"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          
+            const nuevoArrayCarrito = arrayCarrito.filter(el => el.id !== id);
+            arrayCarrito = nuevoArrayCarrito;
+            localStorage.setItem("arrayCarrito", JSON.stringify(arrayCarrito));
+            
+           
         
-        total = JSON.parse(localStorage.getItem("total"))
-        mostrarCarrito(arrayCarrito)
-    }
+            if(arrayCarrito == ""){
+               localStorage.removeItem("arrayCarrito");
+               const $conteinerCompras = document.getElementById("conteiner-compras");
+            $conteinerCompras.innerText = "";
+             
+            const $carritoVacio = document.createElement("h2");
+            $carritoVacio.innerText = "Carrito Vacío"
+            $carritoVacio.className = "carrito-vacio"
+            $conteinerCompras.appendChild($carritoVacio);
+            const $pago = document.getElementById("pago");
+            $pago.innerText="";
+             
+            contadorCarrito = 0;
+            localStorage.setItem("contadorCarrito",contadorCarrito);
+            }else{
+                
+                total = JSON.parse(localStorage.getItem("total"))
+                mostrarCarrito(arrayCarrito)
+            }
+          Swal.fire({
+            title: "Producto eliminado!",
+            icon: "success"
+          });
+        }
+      });
+    
 
     
 
@@ -76,7 +92,14 @@ function eliminarProductoCarrito(id){
 
 function cargarCarrito(nombre,precio,cantidad,imagen) {
     contadorCarrito=(contadorCarrito+1);
-    alert("Producto agregado al Carrito")
+    Toastify({
+
+        text: "Producto Agregado a Carrito",
+        destination: "./carrito.html",
+
+        duration: 3000
+        
+        }).showToast();
     const carritoNuevo = new Carrito (contadorCarrito,nombre,precio,cantidad,imagen);
     arrayCarrito.unshift(carritoNuevo);
      

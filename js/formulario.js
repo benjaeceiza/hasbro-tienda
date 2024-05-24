@@ -5,7 +5,7 @@ function mostrarFormulario(opcion) {
 
     switch (opcion) {
         case 1:
-
+            
             $conteinerFormulario.innerText = "";
             $subtitulo.innerText = "Agregar Producto";
             $inputNombre.placeholder = "Nombre Producto";
@@ -59,6 +59,7 @@ $inputNombre.className = "input-formulario";
 
 const $inputPrecio = document.createElement("input");
 $inputPrecio.className = "input-formulario";
+$inputPrecio.type = "number";
 
 const $inputStock = document.createElement("input");
 $inputStock.type = "number";

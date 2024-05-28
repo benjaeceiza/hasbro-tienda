@@ -118,7 +118,12 @@ function cargarCarrito(nombre,precio,cantidad,imagen) {
 
 
 function pagar(){
-    alert("Gracias por su compra, vuelva prontos!")
+    Swal.fire({
+        title: "Se realizó el pago!",
+        text: "Gracias por confiar en nosotros",
+        icon: "success"
+      });
+ 
 
     const $conteinerCompras = document.getElementById("conteiner-compras");
     $conteinerCompras.innerText = "";

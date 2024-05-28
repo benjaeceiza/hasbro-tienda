@@ -25,7 +25,7 @@ class Creador {
 }
 
 
-let contador = localStorage.getItem("contador") || 4;
+let contador = localStorage.getItem("contador") || 8;
 
 let arrayDeProductos;
 
@@ -37,6 +37,35 @@ if (localStorage.getItem("arrayDeProductos")) {
 } else {
 
     arrayDeProductos = [
+        
+        {
+            id: 8,
+            nombre: "Play-doh",
+            precio: 2000,
+            stock: 30,
+            imagen: "../recursos/img-producto/play-doh.jfif",
+        },
+        {
+            id: 7,
+            nombre: "Auto HotWheels",
+            precio: 1000,
+            stock: 50,
+            imagen: "../recursos/img-producto/autito.jfif",
+        },
+        {
+            id: 6,
+            nombre: "Pelota Adidas",
+            precio: 5000,
+            stock: 5,
+            imagen: "../recursos/img-producto/pelota.jfif",
+        },
+        {
+            id: 5,
+            nombre: "Nerf",
+            precio: 80000,
+            stock: 10,
+            imagen: "../recursos/img-producto/nerf.webp",
+        },
         {
             id: 4,
             nombre: "Monopoly",

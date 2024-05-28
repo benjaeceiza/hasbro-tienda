@@ -159,6 +159,7 @@ text-align: center;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: rgb(105, 147, 226);
 
 }
 
@@ -167,13 +168,19 @@ text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid 2px rgb(110, 110, 110);
+    border: solid 4px rgb(255, 255, 255);
     min-width: 250px;
     max-width: 250px;
     border-radius: 10px;
     margin: 20px;
     overflow: hidden;
+    background-color: white;
 
+}
+
+.productos__img:hover{
+    transform: scale(1.1);
+    transition: all .5s;
 }
 
 .productos__nombre {

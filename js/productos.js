@@ -39,8 +39,7 @@ if (localStorage.getItem("arrayDeProductos")) {
      fetch("../js/data.json")
      .then(response => response.json())
      .then(data =>  mostrar(data));
-    //  localStorage.setItem("arrayDeProductos", JSON.stringify(arrayDeProductos));
-    //  mostrar(arrayDeProductos);
+    
     
    
 

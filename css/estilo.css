@@ -160,6 +160,7 @@ text-align: center;
     flex-wrap: wrap;
     justify-content: center;
     background-color: rgb(105, 147, 226);
+    padding: 100px;
 
 }
 
@@ -302,10 +303,14 @@ text-align: center;
 
 /* ---------MAIN CARRITO---- */
 
+
+.fondo{
+    background-color: rgb(228, 228, 228);
+}
 .titulo-carrito {
     text-align: center;
     margin: 20px;
-    color: white;
+    color: rgb(73, 144, 202);
 }
 
 .carrito-vacio {
@@ -322,16 +327,16 @@ text-align: center;
 }
 
 .compras {
-    width: 70%;
+    width: 60%;
     min-width: 500px;
-    margin: 20px auto;
+    margin: 20px auto 20px auto;
     padding: 30px 0;
-    background-color: rgb(5, 64, 131);
+    background-color: rgb(16, 76, 145);
     border-radius: 10px;
     border: solid white 1px;
     height: 500px;
     overflow: auto;
-    margin-bottom: 50px;
+    
 
 }
 
@@ -352,7 +357,7 @@ text-align: center;
     padding: 20px 0;
     width: 70%;
     border-radius: 10px;
-    margin: 15px auto;
+    margin: 15px auto ;
 }
 
 .img-nombre{
@@ -371,6 +376,8 @@ text-align: center;
 
 .img-carrito {
     height: 100px;
+    border-radius: 5px;
+    border: solid 4px rgb(50, 70, 134);
 }
 
 .tachito{
@@ -394,8 +401,9 @@ text-align: center;
     margin: auto;
     margin-bottom: 100px;
     border-radius: 5px;
-    width: 70%;
+    width: 60%;
     min-width: 500px;
+    margin-bottom: 200px;
 }
 
 .precio-total {
@@ -431,10 +439,7 @@ text-align: center;
 
 .footer {
     background-color: rgb(70, 149, 201);
-    ;
     padding-top: 20px;
-
-
 }
 
 .footer__img {
@@ -477,19 +482,23 @@ text-align: center;
     align-items: center;
     padding-top: 30px;
     flex-wrap: wrap;
+    padding-bottom: 50px;
 }
 
 .ubicacion__div {
     display: flex;
+    margin-top: 20px;
 
 }
 
 .ubicacion__p {
     color: white;
+    
 }
 
 .ubicacion__derechos {
     color: white;
+    margin-top: 20px;
 }
 
 .ubicacion__img {

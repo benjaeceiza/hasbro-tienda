@@ -36,67 +36,13 @@ if (localStorage.getItem("arrayDeProductos")) {
 
 } else {
 
-    arrayDeProductos = [
-        
-        {
-            id: 8,
-            nombre: "Play-doh",
-            precio: 2000,
-            stock: 30,
-            imagen: "../recursos/img-producto/play-doh.jfif",
-        },
-        {
-            id: 7,
-            nombre: "Auto HotWheels",
-            precio: 1000,
-            stock: 50,
-            imagen: "../recursos/img-producto/autito.jfif",
-        },
-        {
-            id: 6,
-            nombre: "Pelota Adidas",
-            precio: 5000,
-            stock: 5,
-            imagen: "../recursos/img-producto/pelota.jfif",
-        },
-        {
-            id: 5,
-            nombre: "Nerf",
-            precio: 80000,
-            stock: 10,
-            imagen: "../recursos/img-producto/nerf.webp",
-        },
-        {
-            id: 4,
-            nombre: "Monopoly",
-            precio: 1000,
-            stock: 50,
-            imagen: "../recursos/img-producto/monopoly.webp",
-        },
-        {
-            id: 3,
-            nombre: "Baby Alive",
-            precio: 3000,
-            stock: 20,
-            imagen: "../recursos/img-producto/baby.webp",
-        },
-        {
-            id: 2,
-            nombre: "Transformer",
-            precio: 4500,
-            stock: 20,
-            imagen: "../recursos/img-producto/transformer.webp",
-        },
-        {
-            id: 1,
-            nombre: "Operando",
-            precio: 1000,
-            stock: 50,
-            imagen: "../recursos/img-producto/operando.webp",
-        },
-    ];
-    localStorage.setItem("arrayDeProductos", JSON.stringify(arrayDeProductos));
-    mostrar(arrayDeProductos);
+     fetch("../js/data.json")
+     .then(response => response.json())
+     .then(data =>  mostrar(data));
+    //  localStorage.setItem("arrayDeProductos", JSON.stringify(arrayDeProductos));
+    //  mostrar(arrayDeProductos);
+    
+   
 
 }
 
@@ -170,7 +116,7 @@ function cargar(nombre, precio, stock, imagen) {
     contador++
     const nuevoProducto = new Creador(contador,nombre, precio, stock, imagen);
     arrayDeProductos.unshift(nuevoProducto);
-    localStorage.setItem("arrayDeProductos", JSON.stringify(arrayDeProductos));
+
     mostrar(arrayDeProductos);
 }
 
@@ -243,6 +189,7 @@ function buscarPorNombre(nombre) {
 
 
 function mostrar(arrayDeProductos) {
+    localStorage.setItem("arrayDeProductos", JSON.stringify(arrayDeProductos));
     const conteiner = document.getElementById("conteiner-productos");
     conteiner.innerText = "";
     arrayDeProductos.forEach(el => {

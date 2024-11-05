@@ -31,7 +31,11 @@
 
 
 .banner-slider {
-    height: 30vw;
+    height: 20vw;
+    mask-image: linear-gradient(
+        black 80%,
+        transparent
+    );
 }
 
 .navbar-nav {
@@ -40,6 +44,7 @@
 
 .header__img {
     height: 70px;
+    
 }
 
 .color-w:hover {
@@ -159,17 +164,25 @@ text-align: center;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgb(105, 147, 226);
-    padding: 100px;
+    width: 60%;
+    margin: auto;
+    padding: 60px 0px;
+    background-color: white;
+    box-shadow: 0px 10px 20px 2px rgb(121, 121, 121);
+    margin-bottom: 10px;
 
 }
 
+.main{
+    /* background-color: rgb(214, 214, 214); */
+}
 
 .productos__card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid 4px rgb(255, 255, 255);
+    filter: drop-shadow(3px 5px 2px rgb(107, 107, 107));
+    border: solid 2px gray;
     min-width: 250px;
     max-width: 250px;
     border-radius: 10px;
@@ -444,8 +457,7 @@ text-align: center;
 }
 
 .footer__img {
-    height: 15vw;
-    margin-bottom: 40px;
+height: 100px;
 
 }
 
@@ -481,9 +493,9 @@ text-align: center;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 30px;
+   
     flex-wrap: wrap;
-    padding-bottom: 50px;
+   
 }
 
 .ubicacion__div {
@@ -537,6 +549,10 @@ text-align: center;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+    }
+
+    .productos{
+        width: 90%;
     }
 
    
